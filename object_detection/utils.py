@@ -75,10 +75,10 @@ def write_bndbox(img, bnd_xyxys, scores=None, clip=True, ticks=True):
     
     for i, bnd in enumerate(bnd_xyxys):
         if clip is True:
-            xmin = np.clip(bnd['xmin'], 1, img.shape[0] - 1)
-            ymin = np.clip(bnd['ymin'], 1, img.shape[1] - 1)
-            xmax = np.clip(bnd['xmax'], 1, img.shape[0] - 1)
-            ymax = np.clip(bnd['ymax'], 1, img.shape[1] - 1)
+            xmin = np.clip(bnd['xmin'], 1, img.shape[1] - 1)
+            ymin = np.clip(bnd['ymin'], 1, img.shape[0] - 1)
+            xmax = np.clip(bnd['xmax'], 1, img.shape[1] - 1)
+            ymax = np.clip(bnd['ymax'], 1, img.shape[0] - 1)
         else:
             xmin = bnd['xmin']
             ymin = bnd['ymin']
